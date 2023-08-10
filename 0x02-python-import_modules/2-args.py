@@ -2,7 +2,6 @@
 import sys
 if __name__ == "__main__":
     l = len(sys.argv)
-
     if l == 1:
         print("{:d} arguments.".format(l - 1))
     elif l == 2:
