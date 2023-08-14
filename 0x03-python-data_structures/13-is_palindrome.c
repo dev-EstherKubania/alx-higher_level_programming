@@ -9,7 +9,8 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *temp = *head;
 	unsigned int size = 0, i = 0;
-	int *array = (int *)malloc(size * sizeof(int));
+	int *array;
+	array = (int *)malloc(size * sizeof(int));
 	if (head == NULL) 
 		return (0);
 
