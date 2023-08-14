@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#define BUFFER_SIZE 10000
 /**
  * is_palindrome - determine if singly linked list is palindrome
  * @head: pointer to head of singly linked list
@@ -9,8 +9,8 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *temp = *head;
 	unsigned int size = 0, i = 0;
-	int *array;
-	array = (int *)malloc(size * sizeof(int));
+	int array[BUFFER_SIZE];
+
 	if (head == NULL) 
 		return (0);
 
@@ -24,8 +24,7 @@ int is_palindrome(listint_t **head)
 	}
 	if (size == 1) 
 		return (1);
-	if (array == NULL)
-		return (0);
+	
 	temp = *head;
 	while (temp) 
 	{
@@ -36,11 +35,7 @@ int is_palindrome(listint_t **head)
 	for (i = 0; i <= (size/2); i++)
 	{
 		if (array[i] != array[size - i - 1])
-		{
-			free(array);
 			return (0);
-		}
 	}
-	free(array);
 	return (1);
 }
