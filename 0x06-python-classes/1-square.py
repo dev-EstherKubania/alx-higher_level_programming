@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-module that Write a class
-Square that defines a square based on 0-square.py
+module that Write a class Square
+that defines a square based on 0-square.py
 """
 class Square:
     """class that defines a square"""
