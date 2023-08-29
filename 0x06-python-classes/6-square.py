@@ -13,16 +13,18 @@ class Square:
             size(self): Getter method to retrieve the size attribute.
             size(self, value): Setter method to set the size attribute.
     """
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """
             Initializes a new Square instance with an optional size.
             Args:
-                size (int): The size of the square (default is 0).
+                size (int): The size of the square.
+                position (tuple): The position of the square
             Raises:
                 TypeError: If size is not an integer.
                 ValueError: If size is less than 0.
         """
         self.__size = size
+        self.position = position
 
     def area(self):
         """
