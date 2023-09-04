@@ -6,6 +6,7 @@ Attributes:
     height (int): The height of the rectangle.
 """
 
+
 class Rectangle:
     """
     The Rectangle class defines a rectangle object.
