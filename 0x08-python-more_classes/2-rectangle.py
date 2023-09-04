@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    2-rectangle: Defines the Rectangle class
+2-rectangle: Defines the Rectangle class
 """
 
 
@@ -15,6 +15,7 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         Initializes a new Rectangle instance.
+
         Args:
             width (int): The width of the rectangle (default is 0).
             height (int): The height of the rectangle (default is 0).
@@ -37,6 +38,7 @@ class Rectangle:
     def width(self):
         """
         Gets the width of the rectangle.
+
         Returns:
             int: The width of the rectangle.
         """
@@ -46,8 +48,10 @@ class Rectangle:
     def width(self, value):
         """
         Sets the width of the rectangle.
+
         Args:
             value (int): The new width value.
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than 0.
@@ -62,6 +66,7 @@ class Rectangle:
     def height(self):
         """
         Gets the height of the rectangle.
+
         Returns:
             int: The height of the rectangle.
         """
@@ -71,8 +76,10 @@ class Rectangle:
     def height(self, value):
         """
         Sets the height of the rectangle.
+
         Args:
             value (int): The new height value.
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than 0.
@@ -86,6 +93,7 @@ class Rectangle:
     def area(self):
         """
         Calculates and returns the area of the rectangle.
+
         Returns:
             int: The area of the rectangle.
         """
@@ -94,6 +102,7 @@ class Rectangle:
     def perimeter(self):
         """
         Calculates and returns the perimeter of the rectangle.
+
         Returns:
             int: The perimeter of the rectangle.
         """
