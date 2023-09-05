@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    3-rectangle: Defines the class Rectangle
+    class Rectangle
 """
 
 
@@ -102,4 +102,12 @@ class Rectangle:
             rectangle += "#" * self.__width + "\n"
         rectangle += "#" * self.__width
 
+        return rectangle
+
+    def __repr__(self):
+        """
+            returns a string representation of the rectangle to be
+            able to recreate a new instance
+        """
+        rectangle = "Rectangle({}, {})".format(self.__width, self.__height)
         return rectangle
