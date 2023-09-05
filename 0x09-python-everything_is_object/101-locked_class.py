@@ -7,7 +7,6 @@
 class LockedClass:
     """
     A class that restricts instance attributes to only 'first_name'.
-
     Attributes:
         first_name (str): The first name attribute allowed for instance creation.
     """
