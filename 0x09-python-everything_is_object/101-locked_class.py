@@ -1,14 +1,10 @@
 #!/usr/bin/python3
 """
-    101-locked_class: Class LockedClass
+ Class LockedClass
 """
-
 
 class LockedClass:
     """
-    A class that restricts instance attributes to only 'first_name'.
-
-    Attributes:
-        first_name (str): The first name attribute allowed for instance creation.
+    a class LockedClass with no class or object attribute, that prevents the user from dynamically creating new instance attributes, except if the new instance attribute is called first_name
     """
     __slots__ = ['first_name']
