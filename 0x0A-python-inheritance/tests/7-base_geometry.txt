@@ -1,0 +1,57 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+
+# Test Case 1: Test area method (raises Exception)
+>>> result = bg.area()
+>>> result == "area() is not implemented"
+True
+
+# Test Case 2: Test integer_validator with valid value
+>>> bg.integer_validator("name", 35)
+
+# Test Case 3: Test integer_validator with non-integer value (raises TypeError)
+>>> result = bg.integer_validator("width", "12")
+>>> result == "width must be an integer"
+True
+
+# Test Case 4: Test integer_validator with non-integer value (raises TypeError)
+>>> result = bg.integer_validator("height", None)
+>>> result == "height must be an integer"
+True
+
+# Test Case 5: Test integer_validator with non-integer value (empty name) (raises TypeError)
+>>> result = bg.integer_validator("", True)
+>>> result == " must be an integer"
+True
+
+# Test Case 6: Test integer_validator with non-integer value (raises TypeError)
+>>> result = bg.integer_validator("age", [1, 2, 3])
+>>> result == "age must be an integer"
+True
+
+# Test Case 7: Test integer_validator with value less than or equal to zero (raises ValueError)
+>>> result = bg.integer_validator("quantity", 0)
+>>> result == "quantity must be greater than 0"
+True
+
+# Test Case 8: Test integer_validator with value less than or equal to zero (raises ValueError)
+>>> result = bg.integer_validator("size", -5)
+>>> result == "size must be greater than 0"
+True
+
+# Test Case 9: Test integer_validator with large value (raises ValueError)
+>>> result = bg.integer_validator("quantity", 10**10)
+>>> result == "quantity must be greater than 0"
+True
+
+# Test Case 10: Test integer_validator with large negative value (raises ValueError)
+>>> result = bg.integer_validator("size", -(10**10))
+>>> result == "size must be greater than 0"
+True
+
+# Test Case 11: Test integer_validator with float value (raises TypeError)
+>>> result = bg.integer_validator("age", 3.14)
+>>> result == "age must be an integer"
+True
+
