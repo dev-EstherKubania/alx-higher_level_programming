@@ -5,13 +5,10 @@
 
 
 class Student:
-    """
-    Defines a student by first_name, last_name, and age.
-    """
-
     def __init__(self, first_name, last_name, age):
         """
-        Initializes a Student instance with first_name, last_name, and age.
+        Initializes a Student instance with a first name, last name, and age.
+
         Args:
             first_name (str): The first name of the student.
             last_name (str): The last name of the student.
@@ -25,12 +22,12 @@ class Student:
         """
         Retrieves a dictionary representation of a Student instance.
         Args:
-            attrs (list): A list of strings representing attribute names.
+            attrs (list): A list of attribute names to retrieve. If None,
+            retrieve all attributes.
         Returns:
-            dict: A dictionary containing specified attributes of the Student.
+            dict: A dictionary representation of the Student instance.
         """
-        if attrs is not None and isinstance(attrs, list) and
-            all(isinstance(attr, str) for attr in attrs):
-            return {attr: getattr(self, attr) for attr in attrs if
+        if attrs and all(isinstance(attr, str) for attr in attrs):
+            return {attr: getattr(self, attr) for attr in attrs if /
                     hasattr(self, attr)}
         return self.__dict__
