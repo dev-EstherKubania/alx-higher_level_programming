@@ -27,8 +27,10 @@ class Student:
         Args:
             attrs (list): A list of strings representing attribute names.
         Returns:
-            dict: A dictionary containing the specified attributes of the Student.
+            dict: A dictionary containing specified attributes of the Student.
         """
-        if attrs is not None and isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
-            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+        if attrs is not None and isinstance(attrs, list) and
+        all(isinstance(attr, str) for attr in attrs):
+            return {attr: getattr(self, attr) for attr in attrs if
+                    hasattr(self, attr)}
         return self.__dict__
