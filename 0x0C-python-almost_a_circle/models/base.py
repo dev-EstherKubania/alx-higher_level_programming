@@ -143,9 +143,12 @@ class Base:
                 obj_list = []
                 for row in reader:
                     if cls.__name__ == "Rectangle":
-                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                        obj = cls(int(row[1]), int(row[2]), int(row[3]),
+                                  int(row[4]), int(row[0]))
                     elif cls.__name__ == "Square":
-                        obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                        obj = cls(int(row[1]), int(row[2]),
+                                  int(row[3]), int(row[0]))
+
                     obj_list.append(obj)
                 return obj_list
         except FileNotFoundError:
