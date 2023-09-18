@@ -2,7 +2,7 @@
 """
     contains class Square
 """
-from models.rectangle impiort Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
