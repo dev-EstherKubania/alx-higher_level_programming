@@ -12,6 +12,14 @@ class TestRectangle(unittest.TestCase):
     """
     Test class for the Rectangle class.
     """
+    
+    def test_rectangle_invalid_dimensions(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 10)
+
+    def test_negative_values_in_rectangle(self):
+        with self.assertRaises(ValueError):
+            rect = Rectangle(-5, 10)
 
     def test_create_instance(self):
         r = Rectangle(5, 10)

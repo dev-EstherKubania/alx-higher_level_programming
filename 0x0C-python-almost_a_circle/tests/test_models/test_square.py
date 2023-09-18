@@ -14,6 +14,10 @@ class TestSquare(unittest.TestCase):
     def test_size(self):
         s = Square(5)
         self.assertEqual(s.size, 5)
+    
+    def test_negative_values_in_square(self):
+        with self.assertRaises(ValueError):
+            square = Square(-7)
 
     def test_x_and_y(self):
         s = Square(5, 2, 3)
@@ -31,6 +35,10 @@ class TestSquare(unittest.TestCase):
     def test_string_representation(self):
         s = Square(4, 2, 1, 12)
         self.assertEqual(str(s), "[Square] (12) 2/1 - 4")
+    
+    def test_square_invalid_dimension(self):
+        with self.assertRaises(ValueError):
+            Square(-5)
 
     def test_update(self):
         s = Square(1)
