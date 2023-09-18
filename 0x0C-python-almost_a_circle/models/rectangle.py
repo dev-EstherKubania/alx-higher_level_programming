@@ -23,9 +23,9 @@ class Rectangle(Base):
         Args:
         width (int): Width of the rectangle.
         height (int): Height of the rectangle.
-        x (int, optional): x-coordinate of the rectangle's position. Default is 0.
-        y (int, optional): y-coordinate of the rectangle's position. Default is 0.
-        id (int, optional): Unique identifier for the rectangle. Default is None.
+        x (int, optional): x-coordinate of the rectangle. Default is 0.
+        y (int, optional): y-coordinate of the rectangle. Default is 0.
+        id (int, optional): Unique identifier. Default is None.
 
         Returns:
         None
@@ -188,7 +188,8 @@ class Rectangle(Base):
         Returns:
         str: Formatted string representing the Rectangle instance.
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - " \
+           f"{self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
         """

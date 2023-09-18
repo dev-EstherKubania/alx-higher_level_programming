@@ -12,7 +12,7 @@ class Base:
     """
     Base class for managing unique IDs.
     Attributes:
-        __nb_objects (int): Private class attribute to keep track of the number of objects.
+        __nb_objects (int): Private class attribute to keep track of objects.
         id (int): Public instance attribute representing the object's ID.
     """
 
@@ -22,7 +22,7 @@ class Base:
         """
         Initialize a new Base instance.
         Args:
-            id (int, optional): The ID for the instance. If not provided, a unique ID will be generated.
+            id (int, optional): The ID. If none, a unique ID will be generated
         Returns:
             None
         """
