@@ -176,5 +176,14 @@ class Rectangle(Base):
         Returns:
         None
         """
+        print('\n' * self.__y, end='')
         for i in range(self.__height):
-            print("#" * self.__width)
+            print(' ' * self.__x + '#' * self.__width)
+
+    def __str__(self):
+        """
+        Return a string representation of the Rectangle instance.
+        Returns:
+        str: Formatted string representing the Rectangle instance.
+        """
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
