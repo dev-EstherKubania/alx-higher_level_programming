@@ -38,65 +38,65 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(objects[1]['name'], 'Object2')
 
     def test_id(self):
-        b = Base(12)
-        self.assertEqual(12, b.id)
+        b = Base(10)
+        self.assertEqual(10, b.id)
 
-    def test_id_zero(self):
+    def test_idzero(self):
         b = Base(0)
         self.assertEqual(0, b.id)
 
-    def test_id_negative(self):
-        b = Base(-2)
-        self.assertEqual(-2, b.id)
+    def test_idnegative(self):
+        b = Base(-3)
+        self.assertEqual(-3, b.id)
 
-    def test_id_string(self):
+    def test_idstring(self):
         b = Base("Base")
         self.assertEqual("Base", b.id)
 
-    def test_id_list(self):
+    def test_idlist(self):
         b = Base([1, 3, 6])
         self.assertEqual([1, 3, 6], b.id)
 
-    def test_id_tuple(self):
-        b = Base((1, 3))
-        self.assertEqual((1, 3), b.id)
+    def test_idtuple(self):
+        b = Base((1, 4))
+        self.assertEqual((1, 4), b.id)
 
-    def test_id_dict(self):
-        b = Base({'id': 12})
-        self.assertEqual({'id': 12}, b.id)
+    def test_iddict(self):
+        b = Base({'id': 10})
+        self.assertEqual({'id': 10}, b.id)
 
-    def test_to_json_type(self):
+    def test_json_type(self):
         sq = Square(9)
         json_dict = sq.to_dictionary()
         json_string = Base.to_json_string([json_dict])
         self.assertEqual(type(json_string), str)
 
-    def test_to_json_value(self):
+    def test_json_value(self):
         sq = Square(1, 0, 0, 9)
         json_dict = sq.to_dictionary()
         json_string = Base.to_json_string([json_dict])
         self.assertEqual(json.loads(json_string), [{"id": 9, "y": 0,
                                                     "size": 1, "x": 0}])
 
-    def test_to_json_None(self):
+    def test_json_None(self):
         json_string = Base.to_json_string(None)
         self.assertEqual(json_string, "[]")
 
-    def test_to_json_empty(self):
+    def test_json_empty(self):
         json_string = Base.to_json_string([])
         self.assertEqual(json_string, "[]")
 
-    def test_from_json_string(self):
+    def test_from_jsonstring(self):
         sq = Square(1, 0, 0, 234)
         json_dict = sq.to_dictionary()
         json_string = Base.to_json_string([json_dict])
         json_list = Base.from_json_string(json_string)
         self.assertEqual(json_list, [{'size': 1, 'x': 0, 'y': 0, 'id': 234}])
 
-    def test_from_json_none(self):
+    def test_from_jsonnone(self):
         json_list = Base.from_json_string(None)
         self.assertEqual(json_list, [])
 
-    def test_from_json_empty(self):
+    def test_from_jsonempty(self):
         json_list = Base.from_json_string("[]")
         self.assertEqual(json_list, [])
