@@ -35,6 +35,16 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             r = Rectangle(5, 10, 1, -2)
 
+    def test_width_and_height(self):
+        r = Rectangle(10, 7, 2, 8)
+        self.assertEqual(r.width, 10)
+        self.assertEqual(r.height, 7)
+
+    def test_x_and_y(self):
+        r = Rectangle(10, 7, 2, 8)
+        self.assertEqual(r.x, 2)
+        self.assertEqual(r.y, 8)
+
     def test_area_calculation(self):
         r = Rectangle(5, 10)
         self.assertEqual(r.area(), 50)
@@ -47,11 +57,21 @@ class TestRectangle(unittest.TestCase):
         with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
             r.display()
             self.assertEqual(mock_stdout.getvalue(), expected_output)
+    
+    def test_string_representation(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(str(r), "[Rectangle] (12) 2/1 - 4/6")
+
+    def test_update(self):
+        r = Rectangle(10, 10, 10, 10)
+        r.update(89, 2, 3, 4)
+        self.assertEqual(str(r), "[Rectangle] (89) 4/10 - 2/3")
 
     def test_to_dictionary(self):
         r = Rectangle(5, 10, 1, 2, 3)
         expected_dict = {'id': 3, 'width': 5, 'height': 10, 'x': 1, 'y': 2}
         self.assertEqual(r.to_dictionary(), expected_dict)
+
     def test_invalid_width(self):
         with self.assertRaises(ValueError):
             r = Rectangle(0, 10)
