@@ -3,7 +3,7 @@
     contains a class Base.
 """
 
-
+import turtle
 import json
 import csv
 
@@ -153,3 +153,38 @@ class Base:
                 return obj_list
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        '''
+        Draws the given list of rectangles and squares using Turtle graphics.
+        :param list_rectangles: List of Rectangle instances
+        :param list_squares: List of Square instances
+        '''
+        screen = turtle.Screen()
+        screen.title("Shapes Drawing")
+        screen.setup(width=800, height=600)
+
+        t = turtle.Turtle()
+
+        for rect in list_rectangles:
+            t.penup()
+            t.setpos(rect.x, rect.y)
+            t.pendown()
+            t.color("blue")
+            for _ in range(2):
+                t.forward(rect.width)
+                t.right(90)
+                t.forward(rect.height)
+                t.right(90)
+
+        for square in list_squares:
+            t.penup()
+            t.setpos(square.x, square.y)
+            t.pendown()
+            t.color("green")
+            for _ in range(4):
+                t.forward(square.size)
+                t.right(90)
+
+        turtle.done()
