@@ -9,4 +9,3 @@ if (args.length <= 1) {
   numbers.sort((a, b) => b - a);
   console.log(numbers[1]);
 }
-

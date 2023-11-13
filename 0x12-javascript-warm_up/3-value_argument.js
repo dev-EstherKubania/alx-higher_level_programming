@@ -6,4 +6,3 @@ if (!arg) {
 } else {
   console.log(arg);
 }
-

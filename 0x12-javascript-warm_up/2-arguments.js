@@ -9,4 +9,3 @@ if (numArgs === 0) {
 } else {
   console.log('Arguments found');
 }
-
