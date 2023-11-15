@@ -8,7 +8,6 @@ module.exports = class Rectangle {
       this.height = h;
     }
   }
-
   print () {
     let rows = 'X';
     for (let i = 0; i < this.width - 1; i++) {
