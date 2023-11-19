@@ -18,7 +18,8 @@ if __name__ == "__main__":
                          passwd=password, db=database)
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY
+                   '{}' ORDER BY id ASC")
 
     rows = cursor.fetchall()
 
