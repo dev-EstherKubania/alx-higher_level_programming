@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-""" List all state objects using sqlalchemy """
+"""
+    List all state objects using sqlalchemy
+"""
+
+from sys import argv
+from sqlalchemy import create_engine
+from sqlalchemy.orm.session import sessionmaker, Session
+from model_state import Base, State
+
 
 if __name__ == '__main__':
-
-    from sys import argv
-    from sqlalchemy import create_engine
-    from sqlalchemy.orm.session import sessionmaker, Session
-    from model_state import Base, State
 
     username = '{}'.format(argv[1])
     password = '{}'.format(argv[2])
