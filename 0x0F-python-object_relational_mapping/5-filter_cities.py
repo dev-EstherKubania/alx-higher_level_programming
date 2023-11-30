@@ -3,32 +3,28 @@
     sorts the results in ascending order by cities.id
 """
 
+from sys import argv
 import MySQLdb
-import sys
 
+if __name__ == '__main__':
 
-if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print("Usage: {} <username> <password> <database> <state_name>".format(sys.argv[0]))
-        sys.exit(1)
+    db_user = argv[1]
+    db_passwd = argv[2]
+    db_name = argv[3]
+    user_state = argv[4]
 
-    username, password, database, state_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+    database = MySQLdb.connect(host='localhost',
+                               port=3306,
+                               user=db_user,
+                               passwd=db_passwd,
+                               db=db_name)
 
-    db = MySQLdb.connect(host="localhost", port=3306, user=username,
-                         passwd=password, db=database)
-    cursor = db.cursor()
+    cursor = database.cursor()
 
-    query = """SELECT GROUP_CONCAT(cities.name ORDER BY cities.id SEPARATOR ASC ', ')
-               FROM states
-               INNER JOIN cities ON cities.state_id = states.id
-               WHERE states.name = %s"""
-
-    cursor.execute(query, (state_name,))
-
-    result = cursor.fetchone()
-
-    if result[0] is not None:
-        print(result[0])
-
-    cursor.close()
-    db.close()
+    cursor.execute('SELECT cities.name FROM cities\
+                   JOIN states\
+                   ON cities.state_id = states.id\
+                   WHERE states.name = %s\
+                   ORDER BY states.id ASC', (user_state,))
+    result = []
+    print(', '.join([value[0] for value in cursor.fetchall()]))
