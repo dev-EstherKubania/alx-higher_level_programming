@@ -1,3 +1,3 @@
 #!/bin/bash
-# This script takes a URL as an argument, sends a GET request using curl, and displays the body of the response for a 200 status code
+# takes a URL as an argument, sends a GET request, displays message
 curl -sL "$1"
