@@ -21,6 +21,7 @@ def fetch_status(url):
         body = response.read()
     return body
 
+
 def display_response_info(body):
     """
     Displays information about the body of the HTTP response.
@@ -33,8 +34,9 @@ def display_response_info(body):
     print("\t- content:", body)
     print("\t- utf8 content:", body.decode('utf-8'))
 
+
 if __name__ == "__main__":
-    
+
     url = 'https://alx-intranet.hbtn.io/status'
 
     response_body = fetch_status(url)
